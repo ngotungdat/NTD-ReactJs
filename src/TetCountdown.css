@@ -1,9 +1,10 @@
 .center-content {
     display: flex;
-    align-items: top;
+    align-items: flex-end;
     justify-content: center;
     font-size: 200%;
     height: 100vh; /* 100% chiều cao của viewport */
+    color: white;
   }
   
   /* Thêm kiểu CSS tùy thuộc vào yêu cầu cụ thể của bạn */
