@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './StaffList.css';
+import StaffDetail from './StaffDetail';
 
 const StaffList = () => {
     const [staff, setStaff] = useState([]);
@@ -9,7 +10,7 @@ const StaffList = () => {
     const fetchData = async () => {
         try {
             let url = `https://localhost:7130/staff`
-            if(searchTerm.length > 0){
+            if (searchTerm.length > 0) {
                 url = url + `?search=${searchTerm}`;
             }
             const response = await axios.get(url);
@@ -58,7 +59,8 @@ const StaffList = () => {
                             <td>{item.department}</td>
                             <td>{item.status}</td>
                             <td>
-                                <button>Edit</button>
+                                {/* <button>Edit</button> */}
+                                <StaffDetail {...item}></StaffDetail>
                             </td>
                         </tr>
                     ))}
