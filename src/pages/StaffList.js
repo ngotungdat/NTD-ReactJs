@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './StaffList.css';
-import StaffDetail from './StaffDetail';
+import StaffCard from './StaffCard';
+import { Link } from 'react-router-dom';
+
 
 const StaffList = () => {
     const [staff, setStaff] = useState([]);
@@ -47,7 +49,8 @@ const StaffList = () => {
                         <th>Email</th>
                         <th>Phòng ban</th>
                         <th>Trạng thái</th>
-                        <th>Thao tác</th>
+                        <th>Card</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,8 +62,10 @@ const StaffList = () => {
                             <td>{item.department}</td>
                             <td>{item.status}</td>
                             <td>
-                                {/* <button>Edit</button> */}
-                                <StaffDetail {...item}></StaffDetail>
+                                {/* <StaffCard {...item}></StaffCard> */}
+                            </td>
+                            <td>
+                                {/* <Link to={`/pages/${item.id}`}><button>Chi tiết</button></Link> */}
                             </td>
                         </tr>
                     ))}
